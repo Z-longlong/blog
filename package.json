@@ -16,6 +16,6 @@
         "vuepress-plugin-container": "^2.1.5"
     },
     "engines": {
-        "node": "14.x"
+        "node": ">=14"
     }
 }
