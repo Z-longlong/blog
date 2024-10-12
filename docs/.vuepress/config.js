@@ -66,5 +66,7 @@ export default defineUserConfig({
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
+    // https://vercel.com/zyls-projects-4cc20fcd/blog/settings/environment-variables
+    base:process.env.VERVEL_BASE_PATH || '/blog/'//VERVEL_BASE_PATH 变量为在vercel部署时，vercel后台生成的
     
 })
