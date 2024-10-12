@@ -14,5 +14,8 @@
     "devDependencies": {
         "vuepress": "^1.5.2",
         "vuepress-plugin-container": "^2.1.5"
+    },
+    "engines": {
+        "node": "14.8.0"
     }
 }
