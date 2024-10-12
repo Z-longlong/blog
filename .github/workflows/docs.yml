@@ -17,14 +17,6 @@ jobs:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-      # - name: Setup npm
-      #   uses: npm/action-setup@v2
-      #   with:
-      #     # 选择要使用的 pnpm 版本
-      #     version: 10
-      #     # 使用 pnpm 安装依赖
-      #     run_install: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,6 +24,11 @@ jobs:
           node-version: 20
           # 缓存 pnpm 依赖
           cache: npm
+
+          
+      # 安装npm依赖
+      - name: Install dependencies
+        run: npm install
 
       # 运行构建脚本
       - name: Build VuePress site
