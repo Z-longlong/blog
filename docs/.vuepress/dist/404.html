@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.18" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (userMode === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (userMode === 'dark' || systemDarkMode) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="/favicon.ico"><title>龙龙的博客</title><meta name="description" content="Track my technical growth">
+    <link rel="preload" href="/blog/assets/style-Cj22MYkn.css" as="style"><link rel="stylesheet" href="/blog/assets/style-Cj22MYkn.css">
+    <link rel="modulepreload" href="/blog/assets/app-DrRTwttQ.js"><link rel="modulepreload" href="/blog/assets/404.html-Cvq8Ggb4.js">
+    <link rel="prefetch" href="/blog/assets/index.html-CNGHODPa.js" as="script"><link rel="prefetch" href="/blog/assets/brower.html-BCxhAHCp.js" as="script"><link rel="prefetch" href="/blog/assets/css.html-DjsycBWU.js" as="script"><link rel="prefetch" href="/blog/assets/html.html-n4bYg2Dp.js" as="script"><link rel="prefetch" href="/blog/assets/http.html-N7u90HlE.js" as="script"><link rel="prefetch" href="/blog/assets/javascript.html-DSCfkvdu.js" as="script"><link rel="prefetch" href="/blog/assets/node.html-Bcd1591J.js" as="script"><link rel="prefetch" href="/blog/assets/vue.html-CigWnMx6.js" as="script"><link rel="prefetch" href="/blog/assets/小程序.html-BS-NVpOF.js" as="script"><link rel="prefetch" href="/blog/assets/手写.html-CAqK6ILm.js" as="script"><link rel="prefetch" href="/blog/assets/数据结构.html-DoaNYFpM.js" as="script"><link rel="prefetch" href="/blog/assets/算法.html-Bj9ctsjY.js" as="script"><link rel="prefetch" href="/blog/assets/设计模式.html-BPi8CyJD.js" as="script"><link rel="prefetch" href="/blog/assets/setupDevtools-7MC2TMWH-BIP_5Mfq.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-67c08c1d><main class="page" data-v-67c08c1d><div class="theme-default-content" vp-content data-v-67c08c1d><h1 data-v-67c08c1d>404</h1><blockquote data-v-67c08c1d>How did we get here?</blockquote><a class="route-link" href="/blog/" data-v-67c08c1d>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/blog/assets/app-DrRTwttQ.js" defer></script>
+  </body>
+</html>

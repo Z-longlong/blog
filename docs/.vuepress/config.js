@@ -62,7 +62,7 @@ export default defineUserConfig({
     // 用户配置
     title: '龙龙的博客',
     description: 'Track my technical growth',
-    base: '/blog/',
+    // base: '/blog/',
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
