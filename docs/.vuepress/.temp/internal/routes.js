@@ -7,6 +7,7 @@ export const routes = Object.fromEntries([
   ["/guide/html.html", { loader: () => import(/* webpackChunkName: "guide_html.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/html.html.js"), meta: {"title":"HTML"} }],
   ["/guide/http.html", { loader: () => import(/* webpackChunkName: "guide_http.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/http.html.js"), meta: {"title":""} }],
   ["/guide/javascript.html", { loader: () => import(/* webpackChunkName: "guide_javascript.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/javascript.html.js"), meta: {"title":""} }],
+  ["/guide/mysql.html", { loader: () => import(/* webpackChunkName: "guide_mysql.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/mysql.html.js"), meta: {"title":"mysql学习"} }],
   ["/guide/node.html", { loader: () => import(/* webpackChunkName: "guide_node.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/node.html.js"), meta: {"title":""} }],
   ["/guide/vue.html", { loader: () => import(/* webpackChunkName: "guide_vue.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/vue.html.js"), meta: {"title":""} }],
   ["/guide/%E5%B0%8F%E7%A8%8B%E5%BA%8F.html", { loader: () => import(/* webpackChunkName: "guide_小程序.html" */"/Users/zhouyunlong/Desktop/项目/myblog/docs/.vuepress/.temp/pages/guide/小程序.html.js"), meta: {"title":""} }],

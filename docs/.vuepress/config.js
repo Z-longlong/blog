@@ -20,6 +20,7 @@ export default defineUserConfig({
             { text: '手写', link: '/guide/手写.md' },
             { text: '小程序', link: '/guide/小程序.md' },
             { text: '算法', link: '/guide/算法.md' },
+            { text: 'mysql', link: '/guide/mysql.md' },
         ],
         sidebar: [{
             text: 'HTML',
@@ -57,6 +58,9 @@ export default defineUserConfig({
         }, {
             text: '算法',
             link: '/guide/算法.md',
+        },{
+            text: 'mysql',
+            link: '/guide/mysql.md',
         },]
     }),
     // 用户配置
