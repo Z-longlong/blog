@@ -207,20 +207,106 @@ ALTER DATABASE [数据库名]
 | decimal | 字符串形式的浮点数，一般用于金融计算 |
 
 #### 字符串
+
+| 数据类型 |  描述 | 大小 |
+| :---: | :---: | :---: |
+| char | 字符串固定大小 | 0-255 |
+| varchar | 可变字符串 | 0-65535 |
+| tinytext | 微型文本 | 2^8-1 |
+| text | 文本串 | 2^16-1 |
+
 #### 时间日期
+
+| 数据类型 |  描述 | 大小 |
+| :---: | :---: | :---: |
+| date | 日期格式 | YYYY-MM-DD |
+| time | 时间格式 | HH:mm:ss |
+| datetime | 最常用的时间格式 | YYYY-MM-DD HH:mm:ss |
+| timestamp | 时间戳，1970.1.1到现在的毫秒数 | |
+| year | 年份表示 | |
+
 #### null
+
+- 没有值
+- 不要使用NULL值进行计算
 
 ### 数据库的字段属性
 
-### 创建数据库表
+#### UnSigned
 
-### 数据库存储引擎
+- 无符号的
+- 声明了该列不能为负数
 
-### 修改数据库
+#### Zero Fill
+
+- 0填充的
+- 不足位数的用0来填充
+
+#### Auto_InCrement
+
+- 通常认为自增，自动在上一条的基础上+1
+- 通常用来设计唯一的主键，必须是整数型
+- 可定义起始值和步长
+
+#### NULL 与 NOT NULL
+
+- 默认值为 NULL，没有插入该列的数值
+- 设置为NOT NULL 则意味该列必须有值
+
+#### DEFAULT
+
+- 默认值
+- 例：性别字段,默认为"男" , 否则为 “女” ; 若无指定该列的值 , 则默认值为"男"的值
 
 ## MYSQL数据管理
 
 ### 外键
+
+如果公共关键字在一个关系中是主关键字，那么这个公共关键字被称为另一个关系的外键。由此可见，外键`表示了两个关系之间的相关联系`。以另一个关系的外键作主关键字的表被称为`主表`，具有此外键的表被称为主表的`从表`。  
+
+在实际操作中，将一个表的值放入第二个表来表示关联，所使用的值是第一个表的主键值(在必要时可包括复合主键值)。此时，第二个表中保存这些值的属性称为外键(foreign key)。  
+
+`外键作用`：保持数据一致性，完整性，主要目的是控制存储在外键表中的数据,约束。使两张表形成关联，外键只能引用外表中的列的值或使用空值。  
+
+```SQL
+-- 目标：学生表（student）的gradeid字段 要去引用年级表（grade）的 gradeid字段
+
+/*
+1. 定义外键key
+2. 给外键添加约束（执行引用）references 引用
+*/
+-- IF NOT EXISTS 防止表重复
+-- COMMENT 注释
+-- KEY 索引约束，对表中字段进行约束索引的，都是通过primary foreign unique等创建的。常见有foreign key，外键关联用的。
+-- CONSTRAINT 增加数据约束  常见约束有 
+--    PRIMARY KEY 约束唯一标识数据库表中的每条记录。 必须包含唯一的值，且不能包含 NULL 值。 每个表只能有一个 PRIMARY KEY，该主键可以由单个列或多个列组成。
+--    FOREIGN KEY 一个或多个字段的组合，它引用另一个表的主键。外键约束用于确保引用的数据存在，并维护数据之间的引用完整性。
+--    UNIQUE 这个约束确保表中的一个字段（或字段组合）的值在整个表中都是唯一的。
+--    CHECK 这个约束确保列中的值满足指定的条件。例如，你可以使用CHECK约束确保某个字段的值大于0。
+--    NOT NULL 这个约束确保列中的值不能为NULL
+--    DEFAULT 这不是真正的约束，但它允许你为列设置默认值。如果在插入数据时没有为该列提供值，系统将使用这个默认值。
+CREATE TABLE IF NOT EXISTS `student`(
+  `id` INT(4) NOT NULL AUTO_INCREMENT COMMENT '学号',
+  `name` VARCHAR(30) NOT NULL DEFAULT '匿名' COMMENT '姓名',
+  `pwd` VARCHAR(20) NOT NULL DEFAULT '123456' COMMENT '密码',
+  `sex` VARCHAR(2) NOT NULL DEFAULT '女' COMMENT '性别',
+  `birthday` DATETIME DEFAULT NULL COMMENT '出生日期',
+  `address` VARCHAR(100) DEFAULT NULL COMMENT '家庭住址',
+  `email` VARCHAR(50) DEFAULT NULL COMMENT '邮箱',
+  `gradeid` INT(10) NOT NULL COMMENT '学生的年级',
+  PRIMARY KEY (`id`),
+  KEY `FK_gradeid` (`gradeid`),
+  CONSTRAINT `FK_gradeid` FOREIGN KEY (`gradeid`) REFERENCES `grade`(`gradeid`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8
+
+-- 创建年级表
+CREATE TABLE `grade`(
+`gradeid` INT(10) NOT NULL COMMENT '年级id',
+`gradename` VARCHAR(50) NOT NULL COMMENT '年纪名称',
+PRIMARY KEY (`gradeid`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8
+
+```
 
 ### DML语言
 
